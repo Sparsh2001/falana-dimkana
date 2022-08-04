@@ -1,0 +1,470 @@
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ ls
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ ls -l
+total 0
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ ls -al
+total 32
+drwxr-xr-x 1 imspa 197609 0 Aug  4 16:45 ./
+drwxr-xr-x 1 imspa 197609 0 Aug  4 16:45 ../
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git init
+Initialized empty Git repository in C:/Users/imspa/Desktop/git_for_lab/.git/
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ ls
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ ls -a
+./  ../  .git/
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ ls -al
+total 36
+drwxr-xr-x 1 imspa 197609 0 Aug  4 16:46 ./
+drwxr-xr-x 1 imspa 197609 0 Aug  4 16:45 ../
+drwxr-xr-x 1 imspa 197609 0 Aug  4 16:46 .git/
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git config user.name Sparsh Jaipuriyar
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git config user.email 1da19is042.is@drait.edu.in
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ nano something.txt
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ cat something.txt
+Hello there
+Rishabh
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git add .
+warning: in the working copy of 'something.txt', LF will be replaced by CRLF the next time Git touches it
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   something.txt
+
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git status -s
+A  something.txt
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ nano something.txt
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git status -s
+AM something.txt
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   something.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   something.txt
+
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git add something.txt
+warning: in the working copy of 'something.txt', LF will be replaced by CRLF the next time Git touches it
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   something.txt
+
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git status -s
+A  something.txt
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git commit -m "Initial commit"
+[master (root-commit) 5dc3034] Initial commit
+ 1 file changed, 3 insertions(+)
+ create mode 100644 something.txt
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git status -s
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git log
+commit 5dc303425fcd71b193e86197ca43128f2c8f4b3e (HEAD -> master)
+Author: Sparsh <1da19is042.is@drait.edu.in>
+Date:   Thu Aug 4 16:55:48 2022 +0530
+
+    Initial commit
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git remote add origin https://github.com/Sparsh2001/falana-dimkana.git
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git push -u origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/Sparsh2001/falana-dimkana.git'
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git push --set-upstream origin master
+
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 247 bytes | 247.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Sparsh2001/falana-dimkana.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git push --set-upstream origin master
+Everything up-to-date
+branch 'master' set up to track 'origin/master'.
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git push
+Everything up-to-date
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git push falana-dimkana master
+fatal: 'falana-dimkana' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git push  https://github.com/Sparsh2001/falana-dimkana.git master
+
+Everything up-to-date
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ nano .dev
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git add .
+warning: in the working copy of '.dev', LF will be replaced by CRLF the next time Git touches it
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git status -s
+A  .dev
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .dev
+
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git restore --staged .dev
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .dev
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ cat .dev
+maka lauda
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ nano .gitignore
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git add .
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git commit -m "Added git ignore"
+[master 5f821f0] Added git ignore
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 290 bytes | 290.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Sparsh2001/falana-dimkana.git
+   5dc3034..5f821f0  master -> master
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git checkout
+Your branch is up to date with 'origin/master'.
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git checkout /?
+fatal: /?: '/?' is outside repository at 'C:/Users/imspa/Desktop/git_for_lab'
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git checkout ?
+error: pathspec '?' did not match any file(s) known to git
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git checkout -b nike
+Switched to a new branch 'nike'
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (nike)
+$ git checkout
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (nike)
+$ git branch
+  master
+* nike
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (nike)
+$ ls -all
+total 43
+drwxr-xr-x 1 imspa 197609  0 Aug  4 17:04 ./
+drwxr-xr-x 1 imspa 197609  0 Aug  4 16:49 ../
+-rw-r--r-- 1 imspa 197609 11 Aug  4 17:03 .dev
+drwxr-xr-x 1 imspa 197609  0 Aug  4 17:11 .git/
+-rw-r--r-- 1 imspa 197609  5 Aug  4 17:04 .gitignore
+-rw-r--r-- 1 imspa 197609 28 Aug  4 16:54 something.txt
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (nike)
+$ nano something.txt
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (nike)
+$ cat something.txt
+Hello there
+Rishabh
+Rathore
+Keshav
+Raj
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (nike)
+$ git add .
+warning: in the working copy of 'something.txt', LF will be replaced by CRLF the next time Git touches it
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (nike)
+$ git commit -m "added name"
+[nike 15a02f5] added name
+ 1 file changed, 2 insertions(+)
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (nike)
+$ git push
+fatal: The current branch nike has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin nike
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (nike)
+$ cat something.txt
+Hello there
+Rishabh
+Rathore
+Keshav
+Raj
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (nike)
+$ git checkout -b master
+fatal: a branch named 'master' already exists
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (nike)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ cat something.txt
+Hello there
+Rishabh
+Rathore
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git checkout nike
+Switched to branch 'nike'
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (nike)
+$ cat something.txt
+Hello there
+Rishabh
+Rathore
+Keshav
+Raj
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (nike)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ cat something.txt
+Hello there
+Rishabh
+Rathore
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git merge nike
+Updating 5f821f0..15a02f5
+Fast-forward
+ something.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ cat something.txt
+Hello there
+Rishabh
+Rathore
+Keshav
+Raj
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 316 bytes | 316.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Sparsh2001/falana-dimkana.git
+   5f821f0..15a02f5  master -> master
+
+imspa@RithikPC MINGW64 ~/Desktop/git_for_lab (master)
+$
